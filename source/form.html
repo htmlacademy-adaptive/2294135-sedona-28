@@ -50,37 +50,38 @@
       <!-- фио -->
       <fieldset class="form__introduce">
         <legend class="form__introduce-title title">Представьтесь:</legend>
-        <label class="form__introduce-label label" for="author-name">Имя*:</label>
-        <input class="form__introduce-input input" type="text" name="name" id="author-name" placeholder="Имя" required>
-        <label class="form__introduce-label label" for="author-surname">Фамилия*:</label>
+        <label class="form__introduce-label label description" for="author-name">Имя*:</label>
+        <input class="form__introduce-input input" type="text" name="name" id="author-name" placeholder="Имя"
+          value="Пётр" required>
+        <label class="form__introduce-label label description" for="author-surname">Фамилия*:</label>
         <input class="form__introduce-input input" type="text" name="surname" id="author-surname" placeholder="Фамилия"
-          required>
-        <label class="form__introduce-label label" for="author-middle-name">Отчество*:</label>
+          value="Пустота" required>
+        <label class="form__introduce-label label description" for="author-middle-name">Отчество*:</label>
         <input class="form__introduce-input input" type="text" name="middle-name" id="author-middle-name"
-          placeholder="Отчество">
+          value="Викторович" placeholder="Отчество">
       </fieldset>
       <!-- контакты -->
       <fieldset class="form__contacts">
         <legend class="form__contacts-title title">Контактная информация:</legend>
-        <label class="form__contacts-label label" for="phone">Контактный телефон*:</label>
+        <label class="form__contacts-label label description" for="phone">Контактный телефон*:</label>
         <input class="form__contacts-input input" type="number" name="phone" id="phone" placeholder="Введите телефон"
           required>
-        <label class="form__contacts-label label" for="email">Электронная почта*:</label>
+        <label class="form__contacts-label label description" for="email">Электронная почта*:</label>
         <input class="form__contacts-input input" type="email" name="email" id="email" placeholder="Введите e-mail"
           required>
       </fieldset>
       <!-- оценка, впечатление -->
       <fieldset class="form__assess">
         <legend class="form__assess-title title">Ваше общее впечатление:</legend>
-        <label class="form__assess-label">
+        <label class="form__assess-label title">
           <input class="form__assess-input input-chek" type="radio" name="assess" value="rather-positive" checked>Скорее
           положительное
         </label>
-        <label class="form__assess-label">
+        <label class="form__assess-label title">
           <input class="form__assess-input input-chek" type="radio" name="assess" value="rather-negative">Скорее
           отрицательное
         </label>
-        <label class="form__assess-label">
+        <label class="form__assess-label title">
           <input class="form__assess-input input-chek" type="radio" name="assess" value="hard-to-answer ">Затрудняюсь
           ответить
         </label>
@@ -88,16 +89,16 @@
       <!-- посещенные достопримечательности -->
       <fieldset class="form__choice">
         <legend class="form__choice-title title">Посещенные достопримечательности:</legend>
-        <label class="form__choice-label">
+        <label class="form__choice-label title">
           <input class="form__choice-input input-chek" type="checkbox" name="devil-bridge" checked>Мост Дьявола
         </label>
-        <label class="form__choice-label">
+        <label class="form__choice-label title">
           <input class="form__choice-input input-chek" type="checkbox" name="bell-mountain" checked>Гора-Колокол
         </label>
-        <label class="form__choice-label">
+        <label class="form__choice-label title">
           <input class="form__choice-input input-chek" type="checkbox" name="slide-park" checked>Слайд-парк
         </label>
-        <label class="form__choice-label">
+        <label class="form__choice-label title">
           <input class="form__choice-input input-chek" type="checkbox" name="red-rocks">Красные скалы
         </label>
       </fieldset>
@@ -105,9 +106,9 @@
       <fieldset class="form__textarea">
         <legend class="form__textarea-title title">Опишите свои эмоции:</legend>
         <textarea class="form__textarea-reviews" name="reviews" id="reviews-field"
-          rows="5">Опишите подробно все свои восторги</textarea>
+          rows="4">Опишите подробно все свои восторги</textarea>
       </fieldset>
-      <button class="form__reviews-button button" type="submit">Отправить отзыв</button>
+      <button class="form__reviews-button button title" type="submit">Отправить отзыв</button>
       <small class="form__legend">* — обязательные поля</small>
     </form>
   </main>
@@ -154,8 +155,8 @@
           </a>
         </li>
       </ul>
-      <div class="main-footer__copyright copyright">
-        <b class="copyright__text">Разработано</b>
+      <div class="main-footer__copyright copyright description">
+        <span class="copyright__text">Разработано</span>
         <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
           <span class="visually-hidden">Логотип html-academy.</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="35" viewBox="0 0 60 60">
@@ -172,7 +173,7 @@
       <h3 class="modal__title title">Что-то пошло не так!</h3>
       <p class="modal__description description">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить
       </p>
-      <button class="modal__error-button button" type="submit">ок</button>
+      <button class="modal__error-button button title" type="submit">ок</button>
     </div>
   </div>
   <!-- modal ok -->
@@ -182,10 +183,11 @@
       <p class="modal__description description">Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время
         мы опубликуем его на сайте.
       </p>
-      <div class="modal__button-wrapper">
-        <button class="modal__ok-button button" type="submit">Закрыть окно</button>
-      </div>
     </div>
+    <div class="modal__button-wrapper">
+      <button class="modal__ok-button button title" type="submit">Закрыть окно</button>
+    </div>
+
   </div>
 </body>
 

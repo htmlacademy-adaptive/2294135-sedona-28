@@ -1,3 +1,11 @@
+.reviews__title {
+  margin: 36px 19px 24px;
+}
+
+.reviews__description {
+  margin-bottom: 30px;
+}
+
 .form__introduce,
 .form__contacts,
 .form__assess,
@@ -10,24 +18,25 @@
 
 .form__introduce-label,
 .form__contacts-label {
-  .description();
   text-align: left;
+  padding-left: 16px;
+}
+
+.form__introduce-input,
+.form__contacts-input {
+  .input-styles();
+  margin-bottom: 16px;
+}
+
+// ???
+.form__contacts-input {
+  appearance: none;
 }
 
 .form__assess-label,
 .form__choice-label {
-  .title();
   text-transform: none;
   text-align: left;
-}
-
-.reviews__title {
-  margin: 36px 19px 24px;
-}
-
-.reviews__description {
-  .description();
-  margin-bottom: 30px;
 }
 
 .form__introduce-title,
@@ -36,6 +45,15 @@
 .form__choice-title,
 .form__textarea-title {
   padding: 24px 20px 20px;
+}
+
+// ???
+.form__textarea-reviews {
+  .input-styles();
+}
+
+.form__textarea {
+  margin-bottom: 56px;
 }
 
 .form__reviews-button {
@@ -47,9 +65,8 @@
 }
 
 .form__legend {
-  .description();
   display: block;
   text-align: right;
-  padding-right: 20px;
+  padding: 3px 20px;
   opacity: 60%;
 }
