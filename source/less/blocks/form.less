@@ -1,0 +1,65 @@
+.form__introduce,
+.form__contacts,
+.form__assess,
+.form__choice,
+.form__textarea {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__introduce-label,
+.form__contacts-label {
+  text-align: left;
+  padding-left: 16px;
+}
+
+.form__introduce-input,
+.form__contacts-input {
+  .input-styles();
+  margin-bottom: 16px;
+}
+
+// ???
+.form__contacts-input {
+  appearance: none;
+}
+
+.form__assess-label,
+.form__choice-label {
+  text-transform: none;
+  text-align: left;
+}
+
+.form__introduce-title,
+.form__contacts-title,
+.form__assess-title,
+.form__choice-title,
+.form__textarea-title {
+  padding: 24px 20px 20px;
+}
+
+// ???
+.form__textarea-reviews {
+  .input-styles();
+}
+
+.form__textarea {
+  margin-bottom: 56px;
+}
+
+.form__reviews-button {
+  display: block;
+  width: 280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 16px 10px;
+}
+
+.form__legend {
+  display: block;
+  text-transform: uppercase;
+  text-align: right;
+  padding: 3px 20px;
+  opacity: 60%;
+}
