@@ -3,7 +3,7 @@
 }
 
 .menu-list__item {
-  background-color: @main-color;
+  background-color: @theme-color;
 }
 
 .menu-list__link {
@@ -15,7 +15,31 @@
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  color: #ffffff;
+  color: @background-main-color;
   padding: 17px 15px 12px;
+}
+
+@media (min-width: @tablet-width) {
+  .menu-list {
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr;
+  }
+  .menu-list__item {
+    background-color: @background-main-color;
+    &:nth-child(4n-2) {
+      grid-column: 2 / span 2;
+      text-align: left;
+      padding-right: 50%;
+      }
+    }
+  .menu-list__link {
+    font-size: 14px;
+    line-height: 21px;
+    color: @title-color;
+    padding: 18px 5px;
+    &--current {
+      color: @current-link-color;
+    }
+  }
 }
 
