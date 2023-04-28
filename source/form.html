@@ -9,6 +9,7 @@
 </head>
 
 <body class="page-body">
+  <div class="page-body__wrapper">
   <!-- header -->
   <header class="main-header">
     <a class="main-header__logo" href="index.html">
@@ -49,59 +50,91 @@
     <!-- форма отзыва -->
     <form class="form-reviews form" action="https://echo.htmlacademy.ru/" method="post">
       <!-- фио -->
-      <fieldset class="form__introduce">
-        <legend class="form__introduce-title title">Представьтесь:</legend>
-        <label class="form__introduce-label label description" for="author-name">Имя*:</label>
-        <input class="form__introduce-input input" type="text" name="name" id="author-name" placeholder="Имя"
-          value="Пётр" required>
-        <label class="form__introduce-label label description" for="author-surname">Фамилия*:</label>
-        <input class="form__introduce-input input" type="text" name="surname" id="author-surname" placeholder="Фамилия"
-          value="Пустота" required>
-        <label class="form__introduce-label label description" for="author-middle-name">Отчество*:</label>
-        <input class="form__introduce-input input" type="text" name="middle-name" id="author-middle-name"
-          value="Викторович" placeholder="Отчество">
-      </fieldset>
-      <!-- контакты -->
-      <fieldset class="form__contacts">
-        <legend class="form__contacts-title title">Контактная информация:</legend>
-        <label class="form__contacts-label label description" for="phone">Контактный телефон*:</label>
-        <input class="form__contacts-input input" type="number" name="phone" id="phone" placeholder="Введите телефон"
-          required>
-        <label class="form__contacts-label label description" for="email">Электронная почта*:</label>
-        <input class="form__contacts-input input" type="email" name="email" id="email" placeholder="Введите e-mail"
-          required>
-      </fieldset>
+      <div class="form__personal-wrapper">
+        <fieldset class="form__introduce">
+          <legend class="form__introduce-title title">Представьтесь:</legend>
+          <label class="form__introduce-label label description" for="author-name">Имя*:</label>
+          <input class="form__introduce-input input" type="text" name="name" id="author-name" placeholder="Имя"
+            value="Пётр" required>
+          <label class="form__introduce-label label description" for="author-surname">Фамилия*:</label>
+          <input class="form__introduce-input input" type="text" name="surname" id="author-surname"
+            placeholder="Фамилия" value="Пустота" required>
+          <label class="form__introduce-label label description" for="author-middle-name">Отчество*:</label>
+          <input class="form__introduce-input input" type="text" name="middle-name" id="author-middle-name"
+            value="Викторович" placeholder="Отчество">
+        </fieldset>
+        <!-- контакты -->
+        <fieldset class="form__contacts">
+          <legend class="form__contacts-title title">Контактная информация:</legend>
+          <label class="form__contacts-label label description" for="phone">Контактный телефон*:</label>
+          <input class="form__contacts-input input" type="number" name="phone" id="phone" placeholder="Введите телефон"
+            required>
+          <label class="form__contacts-label label description" for="email">Электронная почта*:</label>
+          <input class="form__contacts-input input" type="email" name="email" id="email" placeholder="Введите e-mail"
+            required>
+        </fieldset>
+      </div>
       <!-- оценка, впечатление -->
       <fieldset class="form__assess">
         <legend class="form__assess-title title">Ваше общее впечатление:</legend>
-        <label class="form__assess-label title">
-          <input class="form__assess-input input-chek" type="radio" name="assess" value="rather-positive" checked>Скорее
-          положительное
-        </label>
-        <label class="form__assess-label title">
-          <input class="form__assess-input input-chek" type="radio" name="assess" value="rather-negative">Скорее
-          отрицательное
-        </label>
-        <label class="form__assess-label title">
-          <input class="form__assess-input input-chek" type="radio" name="assess" value="hard-to-answer ">Затрудняюсь
-          ответить
-        </label>
+        <ul class="form__check-list">
+          <li class="form__check-item">
+            <label class="check">
+              <input class="visually-hidden check__input-radio" type="radio" name="assess" value="rather-positive"
+                checked>
+              <span class="check__radio"></span>
+              <span class="form__assess-label title">Скорее положительное</span>
+            </label>
+          </li>
+          <li class="form__check-item">
+            <label class="check">
+              <input class="visually-hidden check__input-radio" type="radio" name="assess" value="rather-negative">
+              <span class="check__radio"></span>
+              <span class="form__assess-label title">Скорее отрицательное</span>
+            </label>
+          </li>
+          <li class="form__check-item">
+            <label class="check">
+              <input class="visually-hidden check__input-radio" type="radio" name="assess" value="hard-to-answer">
+              <span class="check__radio"></span>
+              <span class="form__assess-label title">Затрудняюсь ответить</span>
+            </label>
+          </li>
+        </ul>
       </fieldset>
       <!-- посещенные достопримечательности -->
       <fieldset class="form__choice">
         <legend class="form__choice-title title">Посещенные достопримечательности:</legend>
-        <label class="form__choice-label title">
-          <input class="form__choice-input input-chek" type="checkbox" name="devil-bridge" checked>Мост Дьявола
-        </label>
-        <label class="form__choice-label title">
-          <input class="form__choice-input input-chek" type="checkbox" name="bell-mountain" checked>Гора-Колокол
-        </label>
-        <label class="form__choice-label title">
-          <input class="form__choice-input input-chek" type="checkbox" name="slide-park" checked>Слайд-парк
-        </label>
-        <label class="form__choice-label title">
-          <input class="form__choice-input input-chek" type="checkbox" name="red-rocks">Красные скалы
-        </label>
+        <ul class="form__check-list">
+          <li class="form__check-item">
+            <label class="check">
+              <input class="visually-hidden check__input-mark" type="checkbox" name="devil-bridge" checked>
+              <span class="check__mark"></span>
+              <span class="form__choice-label title">Мост Дьявола</span>
+            </label>
+          </li>
+          <li class="form__check-item">
+            <label class="check">
+              <input class="visually-hidden check__input-mark" type="checkbox" name="bell-mountain" checked>
+              <span class="check__mark"></span>
+              <span class="form__choice-label title">Гора-Колокол</span>
+            </label>
+          </li>
+          <li class="form__check-item">
+            <label class="check">
+              <input class="visually-hidden check__input-mark" type="checkbox" name="slide-park" checked>
+              <span class="check__mark"></span>
+              <span class="form__choice-label title">Слайд-парк</span>
+            </label>
+          </li>
+          <li class="form__check-item">
+            <label class="check">
+              <input class="visually-hidden check__input-mark" type="checkbox" name="red-rocks">
+              <span class="check__mark"></span>
+              <span class="form__choice-label title">Красные скалы</span>
+            </label>
+          </li>
+        </ul>
       </fieldset>
       <!-- отзыв -->
       <fieldset class="form__textarea">
@@ -109,8 +142,10 @@
         <textarea class="form__textarea-reviews" name="reviews" id="reviews-field"
           rows="4">Опишите подробно все свои восторги</textarea>
       </fieldset>
-      <button class="form__reviews-button button" type="submit">Отправить отзыв</button>
-      <small class="form__legend">* — обязательные поля</small>
+      <div class="form__button-wrapper">
+        <button class="form__reviews-button button" type="submit">Отправить отзыв</button>
+        <small class="form__legend">* — обязательные поля</small>
+      </div>
     </form>
   </main>
   <!-- footer -->
@@ -161,7 +196,8 @@
         <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
           <span class="visually-hidden">Логотип html-academy.</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="27" height="35" fill="none" viewBox="0 0 27 35">
-            <path fill="#000" d="M13.65.45h-.1L.05 1.85v24.7l13.5 8 13.4-8V1.85L13.65.45Zm11.4 12.1-11.5-6.8v-.1h-.1l-.1-.1v.1l-11.4 6.9v-9l11.5-1.2 11.6 1.2v9Zm-11.6-5.3 11.5 6.7-4.5 2.6-7.1-4.2v1.4l5.9 3.5-.9.5-5-3v1.4l3.8 2.3-.8.5-3-1.8v1.4l1.9 1.1-1.8 1.1-11.4-6.7 11.4-6.8Zm-11.5 8.3 11.4 6.8v1l-7.9-4.7v1.4l8 4.8v1.1l-8-4.7v1.4l8 4.8 8.1-4.9v-5.2l3.4-2v10l-11.5 6.9-11.5-6.8v-9.9Z"/>
+            <path fill="#000"
+              d="M13.65.45h-.1L.05 1.85v24.7l13.5 8 13.4-8V1.85L13.65.45Zm11.4 12.1-11.5-6.8v-.1h-.1l-.1-.1v.1l-11.4 6.9v-9l11.5-1.2 11.6 1.2v9Zm-11.6-5.3 11.5 6.7-4.5 2.6-7.1-4.2v1.4l5.9 3.5-.9.5-5-3v1.4l3.8 2.3-.8.5-3-1.8v1.4l1.9 1.1-1.8 1.1-11.4-6.7 11.4-6.8Zm-11.5 8.3 11.4 6.8v1l-7.9-4.7v1.4l8 4.8v1.1l-8-4.7v1.4l8 4.8 8.1-4.9v-5.2l3.4-2v10l-11.5 6.9-11.5-6.8v-9.9Z" />
           </svg>
         </a>
       </div>
@@ -191,6 +227,7 @@
     </div>
 
   </div>
+</div>
 </body>
 
 </html>

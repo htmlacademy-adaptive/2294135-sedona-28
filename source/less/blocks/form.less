@@ -1,8 +1,13 @@
+.form {
+  padding: 20px;
+}
+
 .form__introduce,
 .form__contacts,
 .form__assess,
 .form__choice,
 .form__textarea {
+  .list-reset();
   border: none;
   display: flex;
   flex-direction: column;
@@ -25,10 +30,18 @@
   appearance: none;
 }
 
+.form__check-list {
+  .list-reset();
+  .form__check-item {
+    margin-bottom: 26px;
+  }
+}
+
 .form__assess-label,
 .form__choice-label {
   text-transform: none;
   text-align: left;
+  padding-left: 60px;
 }
 
 .form__introduce-title,
@@ -36,7 +49,7 @@
 .form__assess-title,
 .form__choice-title,
 .form__textarea-title {
-  padding: 24px 20px 20px;
+  padding: 24px 5px;
 }
 
 // ???
@@ -48,18 +61,88 @@
   margin-bottom: 56px;
 }
 
+.form__button-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .form__reviews-button {
   display: block;
   width: 280px;
-  margin: 0 auto;
   box-sizing: border-box;
   padding: 16px 10px;
+  align-self: center;
+  margin: 0;
 }
 
 .form__legend {
   display: block;
   text-transform: uppercase;
   text-align: right;
-  padding: 3px 20px;
+  padding-top: 3px;
   opacity: 60%;
+}
+
+@media (min-width: @tablet-width) {
+  .form {
+    padding: 60px;
+  }
+  .form__personal-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+  .form__check-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .form__assess-title,
+  .form__choice-title {
+    display: block;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 40px;
+  }
+  .form__assess,
+  .form__choice {
+    margin-bottom: 40px;
+  }
+  .form__button-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .form__reviews-button {
+    width: 324px;
+  }
+  .form__legend {
+    align-self: self-end;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .form {
+    padding: 120px;
+  }
+
+  .form__check-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .form__textarea {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .form__button-wrapper {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .form__reviews-button {
+    width: 384px;
+  }
+
 }
