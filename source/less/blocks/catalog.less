@@ -36,27 +36,34 @@
   .catalog {
     padding: 5px 60px;
   }
+
   .catalog__title-wrapper {
     padding: 50px 100px;
   }
+
   .catalog__card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
+
   .catalog__card-item {
     margin: 0;
     padding: 0;
+
     &:first-child {
-    grid-column: 1 / -1;
+      grid-column: 1 / -1;
     }
+
     &:nth-child(3) .card-item__figcaption {
       background-color: #eaeaea;
     }
   }
+
   .card-item__img {
     margin: 0;
   }
+
   .card-item__figcaption {
     background-color: #f2f2f2;
     display: flex;
@@ -73,5 +80,3 @@
 //     position: relative;
 //   }
 // }
-
-
