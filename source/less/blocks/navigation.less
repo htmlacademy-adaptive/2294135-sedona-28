@@ -33,6 +33,11 @@
   box-shadow: 0 8px 0 0 @theme-color, 0 16px 0 0 @theme-color;
 }
 
+.navigation--closed .navigation__toggle:hover::before {
+  background-color: fade(@theme-color, 60%);
+  box-shadow: 0 8px 0 0 fade(@theme-color, 60%), 0 16px 0 0 fade(@theme-color, 60%);
+}
+
 .navigation--closed .navigation__toggle:active::before {
   background-color: fade(@theme-color, 30%);
   box-shadow: 0 8px 0 0 fade(@theme-color, 30%), 0 16px 0 0 fade(@theme-color, 30%);
@@ -57,6 +62,11 @@
 
   &::after {
     transform: rotate(-45deg);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: fade(#ffffff, 60%);
   }
 
   &:active::before,

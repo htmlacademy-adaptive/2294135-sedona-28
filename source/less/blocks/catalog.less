@@ -25,12 +25,16 @@
 .catalog__card-item {
   padding-top: 25px;
   padding-bottom: 25px;
+
+  @media (max-width: @mobile-width-only) {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  &:first-child {
+    border-top: 1px solid #e5e5e5;
+  }
 }
 
-.card-item__figure {
-  margin: 0;
-  line-height: 0;
-}
 
 @media (min-width: @tablet-width) {
   .catalog {
@@ -54,29 +58,5 @@
     &:first-child {
       grid-column: 1 / -1;
     }
-
-    &:nth-child(3) .card-item__figcaption {
-      background-color: #eaeaea;
-    }
-  }
-
-  .card-item__img {
-    margin: 0;
-  }
-
-  .card-item__figcaption {
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
   }
 }
-
-// прозрачная плашка
-// @media (min-width: @desktop-width) {
-//   .card-item__figcaption {
-//     background-color: @title-color, opasity 30%;
-//     z-index: 1;
-//     position: relative;
-//   }
-// }
