@@ -26,12 +26,35 @@
 }
 
 .main-footer__copyright {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.copyright__link {
+  .link-decoration-none();
 }
 
 .copyright__text {
   color: @title-color;
   margin-right: 12px;
+
+  &:hover {
+    color: @theme-color;
+  }
+
+  &:active {
+    color: fade(@title-color, 30%);
+  }
+}
+
+.main-footer__copyright .copyright__logo {
+  fill: #000000;
+
+  &:hover {
+    fill: @theme-color;
+  }
+
+  &:active {
+    fill: fade(@title-color, 30%);
+  }
 }

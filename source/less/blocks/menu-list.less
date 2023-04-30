@@ -12,7 +12,7 @@
     }
 
     & .menu-list__link:active {
-      color: fade(@background-main-color, 30%);
+      color: fade(#ffffff, 30%);
     }
 
     &:not(:first-child) {
@@ -71,6 +71,14 @@
 
     &--current {
       color: @current-link-color;
+    }
+
+    &:hover {
+      color: @theme-color;
+    }
+
+    &:active {
+      color: fade(@title-color, 30%);
     }
   }
 }
