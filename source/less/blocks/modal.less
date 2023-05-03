@@ -13,6 +13,7 @@
 .modal__error-button {
   padding: 18px 20px 14px;
   width: 180px;
+  font-size: 18px;
 }
 
 .modal-ok-wrapper {
@@ -20,7 +21,6 @@
 }
 
 .modal__button-wrapper {
-  box-sizing: border-box;
   padding: 20px;
   background-color: #f2f2f2;
 }
@@ -28,4 +28,12 @@
 .modal__ok-button {
   width: 280px;
   padding: 18px 20px 14px;
+  font-size: 18px;
+}
+
+@media (min-width: @tablet-width) {
+  .modal__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }

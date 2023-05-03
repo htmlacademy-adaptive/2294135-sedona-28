@@ -1,0 +1,203 @@
+.form {
+  padding: 20px;
+}
+
+.form__introduce,
+.form__contacts,
+.form__assess,
+.form__choice,
+.form__textarea {
+  .list-reset();
+  border: none;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: @mobile-width-only) {
+    position: relative;
+  }
+}
+
+.form__introduce-label,
+.form__contacts-label {
+  text-align: left;
+  padding-left: 16px;
+}
+
+.form__introduce-input,
+.form__contacts-input {
+  .input-styles();
+  margin-bottom: 16px;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+
+  &:active,
+  &:focus {
+    background-color: #ffffff;
+    border: 4px solid #e5e5e5;
+  }
+}
+
+.form__introduce-input::placeholder,
+.form__contacts-input::placeholder {
+  color: fade(#000000, 30%);
+}
+
+@media (max-width: @mobile-width-only) {
+  .form__introduce-title::before,
+  .form__contacts-title::before,
+  .form__assess-title::before,
+  .form__choice-title::before,
+  .form__textarea-title::before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 40px);
+    height: 1px;
+    background-color: #e5e5e5;
+    top: 0;
+    left: -20px;
+    right: 0;
+  }
+}
+
+.form__check-list {
+  .list-reset();
+
+  .form__check-item {
+    margin-bottom: 26px;
+  }
+}
+
+.form__assess-label,
+.form__choice-label {
+  text-transform: none;
+  text-align: left;
+  padding-left: 60px;
+}
+
+.form__introduce-title,
+.form__contacts-title,
+.form__assess-title,
+.form__choice-title,
+.form__textarea-title {
+  padding: 24px 5px;
+}
+
+// ???
+.form__textarea-reviews {
+  .input-styles();
+}
+
+.form__textarea {
+  margin-bottom: 56px;
+}
+
+.form__button-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__reviews-button {
+  display: block;
+  width: 280px;
+  padding: 16px 10px;
+  align-self: center;
+  margin: 0;
+}
+
+.form__legend {
+  display: block;
+  text-transform: uppercase;
+  text-align: right;
+  padding-top: 3px;
+  opacity: 60%;
+}
+
+@media (min-width: @tablet-width) {
+  .form {
+    padding: 60px;
+  }
+
+  .form__personal-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    position: relative;
+  }
+
+  .form__check-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form__assess-title,
+  .form__choice-title,
+  .form__textarea-title {
+    display: block;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-bottom: 30px;
+  }
+
+  .form__assess,
+  .form__choice {
+    margin-bottom: 40px;
+  }
+
+  .form__button-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .form__reviews-button {
+    width: 324px;
+  }
+
+  .form__legend {
+    align-self: self-end;
+    margin-bottom: 14px;
+  }
+
+  .form__introduce::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: calc(100% - 24px);
+    background-color: #dbdbdb;
+    top: 24px;
+    left: 50%;
+  }
+
+  .form__assess,
+  .form__choice,
+  .form__textarea {
+    border-top: 1px solid #dbdbdb;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .form {
+    padding: 120px;
+  }
+
+  .form__check-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .form__textarea {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .form__button-wrapper {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .form__reviews-button {
+    width: 384px;
+  }
+}

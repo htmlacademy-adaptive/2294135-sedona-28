@@ -1,5 +1,12 @@
 .hashtag-link {
-  .title();
   .link-decoration-none();
   font-size: 21px;
+
+  &:hover {
+    color: @theme-color;
+  }
+
+  &:active {
+    color: fade(@title-color, 30%);
+  }
 }
