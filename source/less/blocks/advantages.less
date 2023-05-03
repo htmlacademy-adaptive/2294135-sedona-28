@@ -43,6 +43,8 @@
 .advantages__img {
   display: block;
   margin: 0 auto;
+  object-fit: cover;
+  width: 100%;
 }
 
 .advantages__item-number {
@@ -94,10 +96,15 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
 
-      .advantages__img {
+      .advantages__img-wrapper {
         grid-column: 2 / span 2;
         width: 100%;
-        align-self: center;
+      }
+
+      .advantages__img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
       }
 
       .advantages__inner-list {
@@ -126,11 +133,16 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
 
-      .advantages__img {
+      .advantages__img-wrapper {
         order: -1;
         grid-column: 1 / span 2;
         width: 100%;
-        align-self: center;
+      }
+
+      .advantages__img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
       }
     }
 
