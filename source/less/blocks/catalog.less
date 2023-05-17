@@ -1,9 +1,10 @@
 .catalog {
-  padding: 5px 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .catalog__title-wrapper {
-  padding: 15px 2px;
+  padding: 15px 30px;
 }
 
 .catalog__title {
@@ -27,12 +28,7 @@
   padding-bottom: 25px;
 }
 
-
 @media (min-width: @tablet-width) {
-  .catalog {
-    padding: 5px 60px;
-  }
-
   .catalog__title-wrapper {
     padding: 50px 100px;
   }
@@ -50,5 +46,24 @@
     &:first-child {
       grid-column: 1 / -1;
     }
+  }
+}
+
+@media (min-width: @tablet-width) and (max-width: @desktop-width - 1) {
+  .catalog {
+    padding: 5px 60px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .catalog {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .catalog__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
   }
 }

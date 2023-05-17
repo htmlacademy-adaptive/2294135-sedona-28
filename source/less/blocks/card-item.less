@@ -5,6 +5,10 @@
 
 .card-item__img {
   margin: 0;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .card-item__figcaption-wrapper {
@@ -31,14 +35,31 @@
 }
 
 .card-item__figcaption-like {
+  display: block;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  padding: 11px 14px 0 14px;
-}
+  padding: 18px 14px 0 3px;
+  position: relative;
+  margin-right: 15px;
 
-.card-item__like-img {
-  fill: #0000004d;
+  &::after {
+    content: "";
+    position: absolute;
+    mask-image: url("../img/sprite.svg#like-icon");
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 23px;
+    height: 21px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    @media (min-width: @desktop-width) {
+      background-color: #ffffff;
+    }
+  }
 }
 
 @media (min-width: @tablet-width) {
@@ -46,15 +67,12 @@
     background-color: #f2f2f2;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    align-items: center;
+    padding: 10px 20px;
   }
 
   .card-item:nth-child(3) .card-item__figcaption {
     background-color: #eaeaea;
-  }
-
-  .card-item__figcaption-like {
-    padding: 11px 9px 0 9px;
   }
 }
 
@@ -81,9 +99,39 @@
   .card-item__number-of-likes {
     color: #ffffff;
   }
-
-  .card-item__like-img {
-    fill: #ffffff;
-  }
 }
 
+@media (max-width: @mobile-width-only) {
+  .card-item__figure {
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .card-item {
+    position: relative;
+    width: 100%;
+    padding: 0;
+  }
+
+  .card-item::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 1px;
+    background-color: #e5e5e5;
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+
+  .card-item:last-child::after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 1px;
+    background-color: #e5e5e5;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

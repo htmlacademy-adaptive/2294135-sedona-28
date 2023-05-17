@@ -11,6 +11,7 @@
   border: none;
   display: flex;
   flex-direction: column;
+
   @media (max-width: @mobile-width-only) {
     position: relative;
   }
@@ -38,6 +39,41 @@
   }
 }
 
+.form__contacts-input {
+  position: relative;
+
+  &--phone {
+    background-image: url("../img/sprite.svg#phone");
+    background-position: 94% 50%;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+  }
+
+  &--email {
+    background-image: url("../img/sprite.svg#email");
+    background-position: 94% 50%;
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: block;
+    background-color: #ff0000;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+
+
+
 .form__introduce-input::placeholder,
 .form__contacts-input::placeholder {
   color: fade(#000000, 30%);
@@ -64,7 +100,7 @@
   .list-reset();
 
   .form__check-item {
-    margin-bottom: 26px;
+    margin-bottom: 38px;
   }
 }
 
@@ -99,7 +135,7 @@
 
 .form__reviews-button {
   display: block;
-  width: 280px;
+  width: 350px;
   padding: 16px 10px;
   align-self: center;
   margin: 0;
@@ -178,7 +214,7 @@
 
 @media (min-width: @desktop-width) {
   .form {
-    padding: 120px;
+    padding: 60px 120px;
   }
 
   .form__check-list {

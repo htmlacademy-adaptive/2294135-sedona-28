@@ -4,6 +4,7 @@
 }
 
 .check__radio {
+  display: block;
   width: 46px;
   height: 46px;
   border-radius: 50%;
@@ -11,14 +12,68 @@
   position: absolute;
   top: -10px;
   left: 0;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+
+  &:active {
+    background-color: #d5d5d5;
+  }
+}
+
+.check__input-radio[type="radio"]:checked + .check__radio::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #333333;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+// вопрос
+  // &:active {
+  //   background-color: rgba(51, 51, 51, 0.3);
+  // }
 }
 
 .check__mark {
+  display: block;
   width: 46px;
   height: 46px;
   background: #f2f2f2;
   position: absolute;
   top: -10px;
   left: 0;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+
+  &:active {
+    background-color: #d5d5d5;
+  }
 }
+
+.check__input-mark[type="checkbox"]:checked + .check__mark::before {
+  content: "";
+  position: absolute;
+  mask-image: url("../img/sprite.svg#tick");
+  background-color: #333333;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 22px;
+  height: 16px;
+}
+// вопрос
+// .check__input-mark[type="checkbox"]:checked + .check__mark::before:active {
+//   background-color: red;
+// }
 

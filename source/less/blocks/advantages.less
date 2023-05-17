@@ -21,6 +21,24 @@
   &:nth-child(n+3) {
     padding: 24px 26px;
   }
+
+  &:nth-child(n+4) {
+    position: relative;
+
+    &::before {
+      @media (max-width: @mobile-width-only) {
+        content: "";
+        position: absolute;
+        width: calc(100% - 36px);
+        height: 1px;
+        background-color: #d6d6d6;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+  }
 }
 
 .advantages__item-wrapper {
@@ -37,6 +55,7 @@
     background-image: url("../img/advantages-triangle.svg");
     background-repeat: no-repeat;
     background-position: top;
+    background-size: 100% 37px;
   }
 }
 
@@ -73,6 +92,27 @@
 
   &:last-child {
     padding-bottom: 46px;
+  }
+
+  &--housing {
+    background-image: url("../img/sprite.svg#icon-housing");
+    background-position: 4% 29%;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+  }
+
+  &--food {
+    background-image: url("../img/sprite.svg#icon-food");
+    background-position: 4% 29%;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+  }
+
+  &--souvenir {
+    background-image: url("../img/sprite.svg#icon-souvenir");
+    background-position: 4% 18%;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
   }
 }
 
@@ -116,7 +156,7 @@
     }
 
     .advantages__inner-item {
-      padding: 158px 33px 60px;
+      padding: 166px 33px 60px;
 
       .advantages__item-title {
         text-align: center;
@@ -125,6 +165,24 @@
 
       .advantages__item-description {
         text-align: center;
+      }
+
+      &--housing {
+        background-position: center 25%;
+        background-size: 79px 72px;
+        background-repeat: no-repeat;
+      }
+
+      &--food {
+        background-position: center 25%;
+        background-size: 80px 68px;
+        background-repeat: no-repeat;
+      }
+
+      &--souvenir {
+        background-position: center 25%;
+        background-size: 75px 75px;
+        background-repeat: no-repeat;
       }
     }
 
@@ -164,4 +222,3 @@
     }
   }
 }
-
