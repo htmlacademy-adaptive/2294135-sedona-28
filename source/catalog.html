@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HTML Academy: Седона</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/apple.png">
+  <link rel="manifest" href="manifest.webmanifest">
 </head>
 
 <body class="page-body">
@@ -13,8 +17,10 @@
     <!-- header -->
     <header class="main-header">
       <a class="main-header__logo" href="index.html">
-        <img class="main-logo" src="img/logo.svg" width="185" height="96"
-          alt="Логотип Седоны.">
+        <svg class="main-logo" width="185" height="96" role="img"
+          aria-label="Переход на главную страницу сайта о Седоне">
+          <use xlink:href="img/sprite.svg#logo"></use>
+        </svg>
       </a>
       <nav class="navigation navigation--closed navigation--nojs">
         <div class="navigation__toggle-wrapper">
@@ -45,8 +51,10 @@
       <h1 class="visually-hidden">Сайт города Седона.</h1>
       <!-- hero -->
       <section class="hero hero-inner ">
-        <img class="hero__img hero-inner__img" src="img/SEDONA.svg" width="229"
-          height="39" alt="Sedona">
+        <svg class="hero__img hero-inner__img" width="229" height="39"
+          role="img" aria-label="Welcome to Sedona" focusable="false">
+          <use xlink:href="img/sprite.svg#hero__sedona"></use>
+        </svg>
       </section>
       <section class="catalog">
         <div class="catalog__title-wrapper">
@@ -58,16 +66,18 @@
         <ul class="catalog__card">
           <li class="catalog__card-item card-item">
             <figure class="card-item__figure">
-              <picture>
-                <source media="(min-width: 1200px)"
-                  srcset="img/catalog-photo-1-desktop.jpg, img/catalog-photo-1-desktop@2x.jpg">
-                <source media="(min-width: 768px)"
-                  srcset="img/catalog-photo-1-tablet.jpg, img/catalog-photo-1-tablet@2x.jpg">
-                <img class="card-item__img" src="img/catalog-photo-1-mobile.jpg"
-                  width="280" height="280"
-                  srcet="img/catalog-photo-1-mobile@2x.jpg"
-                  alt="Фото заката в Седоне.">
-              </picture>
+              <a class="card-item__img-link" href="#">
+                <picture>
+                  <source media="(min-width: 1200px)"
+                    srcset="img/catalog-photo-1-desktop.jpg, img/catalog-photo-1-desktop@2x.jpg">
+                  <source media="(min-width: 768px)"
+                    srcset="img/catalog-photo-1-tablet.jpg, img/catalog-photo-1-tablet@2x.jpg">
+                  <img class="card-item__img"
+                    src="img/catalog-photo-1-mobile.jpg" width="280"
+                    height="280" srcet="img/catalog-photo-1-mobile@2x.jpg"
+                    alt="Фото заката в Седоне.">
+                </picture>
+              </a>
               <figcaption class="card-item__figcaption">
                 <div class="card-item__figcaption-wrapper">
                   <h3 class="card-item__figcaption-title">Неродные просторы</h3>
@@ -85,13 +95,16 @@
           </li>
           <li class="catalog__card-item card-item">
             <figure class="card-item__figure">
-              <picture>
-                <source media="(min-width: 768px)"
-                  srcset="img/photo-2-plants-desktop.jpg, img/photo-2-plants-desktop@2x.jpg">
-                <img class="card-item__img" src="img/photo-2-plants-mobile.jpg"
-                  width="280" height="280" alt="Фото растения в Седоне."
-                  srcset="img/photo-2-plants-mobile@2x.jpg">
-              </picture>
+              <a class="card-item__img-link" href="#">
+                <picture>
+                  <source media="(min-width: 768px)"
+                    srcset="img/photo-2-plants-desktop.jpg, img/photo-2-plants-desktop@2x.jpg">
+                  <img class="card-item__img"
+                    src="img/photo-2-plants-mobile.jpg" width="280" height="280"
+                    alt="Фото растения в Седоне."
+                    srcset="img/photo-2-plants-mobile@2x.jpg">
+                </picture>
+              </a>
               <figcaption class="card-item__figcaption">
                 <div class="card-item__figcaption-wrapper">
                   <h3 class="card-item__figcaption-title">Местная растительность
@@ -111,14 +124,16 @@
           </li>
           <li class="catalog__card-item card-item">
             <figure class="card-item__figure">
-              <picture>
-                <source media="(min-width: 768px)"
-                  srcset="img/catalog-photo-3-desktop.jpg, img/catalog-photo-3-desktop@2x.jpg">
-                <img class="card-item__img" src="img/catalog-photo-3-mobile.jpg"
-                  width="280" height="280"
-                  srcset="img/catalog-photo-3-mobile@2x.jpg"
-                  alt="Фото дороги с высоты в Седоне.">
-              </picture>
+              <a class="card-item__img-link" href="#">
+                <picture>
+                  <source media="(min-width: 768px)"
+                    srcset="img/catalog-photo-3-desktop.jpg, img/catalog-photo-3-desktop@2x.jpg">
+                  <img class="card-item__img"
+                    src="img/catalog-photo-3-mobile.jpg" width="280"
+                    height="280" srcset="img/catalog-photo-3-mobile@2x.jpg"
+                    alt="Фото дороги с высоты в Седоне.">
+                </picture>
+              </a>
               <figcaption class="card-item__figcaption">
                 <div class="card-item__figcaption-wrapper">
                   <h3 class="card-item__figcaption-title">Дорога на север</h3>
@@ -136,14 +151,16 @@
           </li>
           <li class="catalog__card-item card-item">
             <figure class="card-item__figure">
-              <picture>
-                <source media="(min-width: 768px)"
-                  srcset="img/catalog-photo-4-desktop.jpg, img/catalog-photo-4-desktop@2x.jpg">
-                <img class="card-item__img" src="img/catalog-photo-4-mobile.jpg"
-                  width="280" height="280"
-                  srcset="img/catalog-photo-4-mobile@2x.jpg"
-                  alt="Фото моста Дьявола в Седоне.">
-              </picture>
+              <a class="card-item__img-link" href="#">
+                <picture>
+                  <source media="(min-width: 768px)"
+                    srcset="img/catalog-photo-4-desktop.jpg, img/catalog-photo-4-desktop@2x.jpg">
+                  <img class="card-item__img"
+                    src="img/catalog-photo-4-mobile.jpg" width="280"
+                    height="280" srcset="img/catalog-photo-4-mobile@2x.jpg"
+                    alt="Фото моста Дьявола в Седоне.">
+                </picture>
+              </a>
               <figcaption class="card-item__figcaption">
                 <div class="card-item__figcaption-wrapper">
                   <h3 class="card-item__figcaption-title">Мост дьявола</h3>
@@ -166,7 +183,7 @@
         <h2 class="visually-hidden">Видео о Седоне.</h2>
         <div class="catalog-video__wrapper">
           <h3 class="catalog-video__title title">Все ещё сомневаетесь?</h3>
-          <p class="catalog-video__description description">Смотрите презентацию
+          <p class="catalog-video__description description">Смотрите видеопрезентацию
             и скорее за билетами, пока они не
             подорожали в очередной раз!</p>
         </div>
@@ -208,20 +225,13 @@
             </a>
           </li>
         </ul>
-        <div class="main-footer__copyright">
-          <a class="main-footer__copyright-link"
-            href="https://htmlacademy.ru/intensive/adaptive">
-            <span
-              class="main-footer__copyright-text description">Разработано</span>
-            <span class="visually-hidden">Логотип html-academy.</span>
-            <svg class="main-footer__copyright-logo"
-              xmlns="http://www.w3.org/2000/svg" width="27" height="35"
-              fill="none" viewBox="0 0 27 35">
-              <path
-                d="M13.65.45h-.1L.05 1.85v24.7l13.5 8 13.4-8V1.85L13.65.45Zm11.4 12.1-11.5-6.8v-.1h-.1l-.1-.1v.1l-11.4 6.9v-9l11.5-1.2 11.6 1.2v9Zm-11.6-5.3 11.5 6.7-4.5 2.6-7.1-4.2v1.4l5.9 3.5-.9.5-5-3v1.4l3.8 2.3-.8.5-3-1.8v1.4l1.9 1.1-1.8 1.1-11.4-6.7 11.4-6.8Zm-11.5 8.3 11.4 6.8v1l-7.9-4.7v1.4l8 4.8v1.1l-8-4.7v1.4l8 4.8 8.1-4.9v-5.2l3.4-2v10l-11.5 6.9-11.5-6.8v-9.9Z" />
-            </svg>
-          </a>
-        </div>
+        <a class="main-footer__copyright-link"
+          href="https://htmlacademy.ru/intensive/adaptive">Разработано
+          <svg class="main-footer__copyright-logo" width="27" height="35"
+            aria-label="Переход на cайт HTML Academy">
+            <use xlink:href="img/sprite.svg#htmlacademy-logo"></use>
+          </svg>
+        </a>
       </div>
     </footer>
   </div>
