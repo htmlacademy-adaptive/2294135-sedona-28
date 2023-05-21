@@ -11,6 +11,11 @@
   .list-reset();
 }
 
+.divider-tablet,
+.divider-desktop {
+  display: none;
+}
+
 .advantages__item {
   background-color: #eeeeee;
 
@@ -27,7 +32,6 @@
     padding-left: 34px;
     padding-right: 34px;
 
-
     &::before {
       @media (max-width: @mobile-width-only) {
         content: "";
@@ -42,7 +46,7 @@
       }
     }
   }
-
+  // &&&&&&&&&
   &:nth-child(2) {
     .advantages__item-wrapper {
       padding: 37px 18px;
@@ -56,15 +60,17 @@
   .advantages__item-title,
   .advantages__item-number,
   .advantages__item-description {
-    color: @background-main-color;
+    color: #ffffff;
   }
 
-  &--triangle {
-    padding-top: 70px;
-    background-image: url("../img/advantages-triangle.svg");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100% 36px;
+  @media (max-width: @mobile-width-only) {
+    &--triangle {
+      padding-top: 70px;
+      background-image: url("../img/advantages-triangle.svg");
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: 100% 36px;
+    }
   }
 }
 
@@ -99,10 +105,6 @@
     text-align: left;
   }
 
-  &:last-child {
-    padding-bottom: 44px;
-  }
-
   &--housing {
     background-image: url("../img/sprite.svg#icon-housing");
     background-position: 6% 23%;
@@ -119,23 +121,29 @@
 
   &--souvenir {
     background-image: url("../img/sprite.svg#icon-souvenir");
-    background-position: 6% 20%;
-    background-size: 40px 40px;
+    background-position: 7% 20%;
+    background-size: 35px 38px;
     background-repeat: no-repeat;
+  }
+
+  @media (max-width: @mobile-width-only) {
+    &:last-child {
+      padding-bottom: 44px;
+    }
   }
 }
 
 @media (min-width: @tablet-width) {
   .advantages__title {
-    padding: 58px 292px 15px 289px;
-  }
-
-  .advantages__item-number {
-    padding-top: 14px;
+    padding: 48px 158px 15px 156px;
   }
 
   .advantages__description {
-    padding: 15px 124px 44px;
+    padding: 15px 124px 55px;
+  }
+
+  .advantages__item-number {
+    padding-top: 8px;
   }
 
   .advantages__list {
@@ -148,62 +156,25 @@
       grid-column: 1 / -1;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-
-      .advantages__item-title {
-        padding: 0 66px;
-      }
-
-      .advantages__item-description {
-        padding: 6px 29px;
-      }
+      margin-bottom: 29px;
 
       .advantages__img-wrapper {
         grid-column: 2 / span 2;
         width: 100%;
       }
 
-      .advantages__img {
-        display: block;
-        object-fit: cover;
-        width: 100%;
+      .advantages__item-wrapper {
+        padding: 30px 0 20px;
       }
 
-      .advantages__inner-list {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        background-color: @background-main-color;
-      }
-    }
-
-    .advantages__inner-item {
-      padding: 166px 33px 60px;
-
-      .advantages__item-title {
-        text-align: center;
-        padding-bottom: 20px;
-      }
-
-      .advantages__item-description {
+      .advantages__item-title-wrapper {
+        padding: 23px 66px 5px;
         text-align: center;
       }
 
-      &--housing {
-        background-position: center 27%;
-        background-size: 82px 75px;
-        background-repeat: no-repeat;
-      }
-
-      &--food {
-        background-position: center 25%;
-        background-size: 80px 68px;
-        background-repeat: no-repeat;
-      }
-
-      &--souvenir {
-        background-position: center 25%;
-        background-size: 75px 75px;
-        background-repeat: no-repeat;
+      .advantages__item-description-wrapper {
+        padding: 6px 29px;
+        text-align: center;
       }
     }
 
@@ -218,28 +189,170 @@
         width: 100%;
       }
 
-      .advantages__img {
-        display: block;
-        object-fit: cover;
-        width: 100%;
+      .advantages__item-wrapper {
+        padding: 30px 0 20px;
+      }
+
+      .advantages__item-title-wrapper {
+        padding: 23px 53px 5px 50px;
+        text-align: center;
+      }
+
+      .advantages__item-description-wrapper {
+        padding: 6px 31px;
+        text-align: center;
       }
     }
 
     &:nth-child(n+3) {
-      padding: 41px 33px 63px;
+      padding: 42px 33px 41px;
 
       .advantages__item-title {
         padding-left: 16px;
         padding-right: 16px;
       }
+
+      .advantages__item-number {
+        padding-top: 14px;
+        padding-bottom: 23px;
+      }
     }
   }
 
-  .advantages__item-wrapper {
-    padding: 52px 33px 31px;
+  .advantages__inner-list {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: @background-main-color;
+  }
 
-    &--triangle {
-      background-image: none;
+  .advantages__inner-item {
+    .advantages__item-title {
+      text-align: center;
+    }
+
+    .advantages__item-description {
+      text-align: center;
+    }
+
+    &--housing {
+      padding: 134px 28px 25px;
+      background-position: center 25%;
+      background-size: 81px 76px;
+      background-repeat: no-repeat;
+
+      .advantages__item-description {
+        padding: 6px 15px;
+      }
+
+      .advantages__item-title {
+        padding: 23px 66px 18px;
+      }
+    }
+
+    &--food {
+      padding: 134px 28px 25px;
+      background-position: center 26%;
+      background-size: 83px 70px;
+      background-repeat: no-repeat;
+
+      .advantages__item-description {
+        padding: 6px 23px;
+      }
+
+      .advantages__item-title {
+        padding: 21px 66px 18px;
+      }
+    }
+
+    &--souvenir {
+      padding: 134px 28px 25px 28px;
+      background-position: 52% 28%;
+      background-size: 73px 82px;
+      background-repeat: no-repeat;
+
+      .advantages__item-title {
+        padding: 18px 50px 18px 47px;
+      }
+
+      .advantages__item-description {
+        padding: 6px 13px 6px 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: @tablet-width) and (max-width: 1199px) {
+  .divider-tablet {
+    display: inline;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .divider-desktop {
+    display: inline;
+  }
+
+  .advantages__title {
+    padding: 58px 292px 15px 289px;
+  }
+
+  .advantages__description {
+    padding: 15px 124px 45px;
+  }
+
+  .advantages__item {
+    &:first-child {
+      margin-bottom: 2px;
+
+      .advantages__item-wrapper {
+        padding: 30px 0 20px;
+      }
+
+      .advantages__item-title-wrapper {
+        padding: 23px 95px 5px;
+      }
+
+      .advantages__item-description-wrapper {
+        padding: 6px 58px;
+      }
+    }
+
+    &:nth-child(2) {
+      .advantages__item-description-wrapper {
+        padding: 6px 89px;
+      }
+    }
+
+    &:nth-child(n+3) {
+      padding: 42px 38px 52px;
+
+      .advantages__item-title {
+        padding: 10px 30px 0;
+      }
+    }
+  }
+
+  .advantages__inner-item {
+    padding: 146px 33px 60px 32px;
+
+    &--housing {
+      background-position: center 27%;
+      background-size: 82px 75px;
+      background-repeat: no-repeat;
+    }
+
+    &--food {
+      background-position: 49% 28%;
+      background-size: 84px 72px;
+      background-repeat: no-repeat;
+    }
+
+    &--souvenir {
+      padding: 152px 29px 60px 32px;
+      background-position: 49% 28%;
+      background-size: 79px 76px;
+      background-repeat: no-repeat;
     }
   }
 }

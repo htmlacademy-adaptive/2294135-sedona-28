@@ -4,6 +4,10 @@
   @media (min-width: @tablet-width) {
     padding: 60px 155px 55px;
   }
+
+  @media (min-width: @desktop-width) {
+    padding: 62px 155px 66px;
+  }
 }
 
 .search__title {
@@ -14,16 +18,24 @@
   }
 }
 
+.divider {
+  display: none;
+}
+
 .search__description {
   margin-top: 22px;
   margin-bottom: 32px;
 
   @media (min-width: @tablet-width) {
-    line-height: 26px;
-    margin-top: 34px;
-    margin-bottom: 44px;
+    line-height: 24px;
+    margin-top: 30px;
+    margin-bottom: 41px;
     padding-left: 10px;
     padding-right: 10px;
+
+    .divider {
+      display: inline;
+    }
   }
 }
 
@@ -34,3 +46,4 @@
     width: 458px;
   }
 }
+
