@@ -1,5 +1,6 @@
 .form {
   padding: 20px;
+  padding-bottom: 14px;
 }
 
 .form__introduce,
@@ -11,21 +12,66 @@
   border: none;
   display: flex;
   flex-direction: column;
+
   @media (max-width: @mobile-width-only) {
     position: relative;
   }
 }
 
-.form__introduce-label,
+.form__introduce {
+  margin-bottom: 23px;
+}
+
+.form__introduce-title {
+  padding: 25px 19px 20px 18px;
+}
+
+.form__introduce-label {
+  text-align: left;
+  padding-left: 16px;
+}
+
+.form__contacts-title {
+  padding: 26px 19px 19px 18px;
+}
+
 .form__contacts-label {
   text-align: left;
   padding-left: 16px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    background-color: #e6e6e6;
+    right: 0;
+    top: 21px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+  }
+
+  &--phone::before {
+    background-image: url("../img/sprite.svg#phone");
+    background-size: 18px 18px;
+  }
+
+  &--email::before {
+    background-image: url("../img/sprite.svg#email");
+    background-size: 16px 12px;
+  }
+}
+
+.form__contacts {
+  margin-bottom: 18px;
 }
 
 .form__introduce-input,
 .form__contacts-input {
   .input-styles();
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 
   &:hover {
     background-color: #e5e5e5;
@@ -41,6 +87,7 @@
 .form__introduce-input::placeholder,
 .form__contacts-input::placeholder {
   color: fade(#000000, 30%);
+  margin-left: 60px;
 }
 
 @media (max-width: @mobile-width-only) {
@@ -60,32 +107,44 @@
   }
 }
 
+.form__assess-title {
+  padding: 26px 5px 29px;
+}
+
 .form__check-list {
   .list-reset();
+}
 
-  .form__check-item {
-    margin-bottom: 26px;
+.form__check-item {
+  &:not(:last-child) {
+    margin-bottom: 36px;
   }
+
+  &:last-child {
+    margin-bottom: 34px;
+  }
+}
+
+.form__choice-title {
+  padding: 26px 5px 29px 3px;
 }
 
 .form__assess-label,
 .form__choice-label {
   text-transform: none;
   text-align: left;
-  padding-left: 60px;
+  padding-left: 62px;
 }
 
-.form__introduce-title,
-.form__contacts-title,
-.form__assess-title,
-.form__choice-title,
 .form__textarea-title {
-  padding: 24px 5px;
+  padding: 25px 5px 19px;
 }
 
-// ???
 .form__textarea-reviews {
   .input-styles();
+  resize: none;
+  height: 151px;
+  padding: 16px;
 }
 
 .form__textarea {
@@ -103,11 +162,14 @@
   padding: 16px 10px;
   align-self: center;
   margin: 0;
+  border: none;
 }
 
 .form__legend {
+  .figcaption();
   display: block;
-  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
   text-align: right;
   padding-top: 3px;
   opacity: 60%;
@@ -115,34 +177,129 @@
 
 @media (min-width: @tablet-width) {
   .form {
-    padding: 60px;
+    padding: 68px 60px;
+  }
+
+  .form__contacts,
+  .form__introduce {
+    margin-bottom: 0;
   }
 
   .form__personal-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 58px;
     position: relative;
+    margin-bottom: 18px;
   }
 
-  .form__check-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
+  .form__contacts-title,
+  .form__introduce-title,
   .form__assess-title,
   .form__choice-title,
   .form__textarea-title {
     display: block;
+    font-size: 21px;
+  }
+
+  .form__introduce-title {
+    padding: 31px 22px 30px 22px;
+  }
+
+  .form__contacts-title {
+    padding: 32px 0 29px 9px;
+    text-align: left;
+  }
+
+  .form__contacts-label {
+    padding-left: 16px;
+  }
+
+  .form__introduce-input {
+    padding: 16px 68px 15px 16px;
+  }
+
+  .form__assess {
+    margin-bottom: -4px;
+
+    .form__check-item {
+      margin-bottom: 36px;
+      width: 48%;
+
+      &:nth-child(2n) {
+        width: 52%;
+      }
+    }
+  }
+
+  .form__assess-title {
+    margin-bottom: 11px;
     padding-left: 64px;
     padding-right: 64px;
     padding-bottom: 30px;
   }
 
-  .form__assess,
+  .form__check-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 35px;
+  }
+
+  .form__choice-title {
+    margin-bottom: 14px;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-bottom: 25px;
+  }
+
   .form__choice {
-    margin-bottom: 40px;
+    .form__check-list {
+      margin-left: 83px;
+      margin-bottom: -4px;
+    }
+
+    .form__check-item {
+      width: 45%;
+
+      &:nth-child(2n) {
+        width: 55%;
+      }
+    }
+  }
+
+  .form__textarea {
+    margin-bottom: 48px;
+  }
+
+  .form__textarea-title {
+    padding: 17px 75px;
+    margin-bottom: 14px;
+  }
+
+  .form__textarea-reviews {
+    height: 159px;
+  }
+
+  .form__introduce::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: calc(100% - 34px);
+    background-color: #dbdbdb;
+    top: 24px;
+    left: 50%;
+  }
+
+  .form__assess,
+  .form__choice,
+  .form__textarea {
+    border-top: 1px solid #dbdbdb;
+  }
+
+  .form__legend {
+    font-size: 14px;
+    align-self: self-end;
+    margin-bottom: 14px;
   }
 
   .form__button-wrapper {
@@ -154,50 +311,103 @@
     width: 324px;
   }
 
-  .form__legend {
-    align-self: self-end;
-    margin-bottom: 14px;
-  }
-
-  .form__introduce::before {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: calc(100% - 24px);
-    background-color: #dbdbdb;
-    top: 24px;
-    left: 50%;
-  }
-
-  .form__assess,
-  .form__choice,
-  .form__textarea {
-    border-top: 1px solid #dbdbdb;
+  .main-footer__wrapper-form {
+    padding: 31px 16px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .form {
-    padding: 120px;
+    padding: 28px 120px 60px;
   }
 
-  .form__check-list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  .reviews__title {
+    padding-top: 115px;
+  }
+
+  .reviews__description {
+    padding: 17px 378px 7px;
+  }
+
+  .form__introduce-title {
+    padding: 31px 40px 30px;
+  }
+
+  .form__contacts-title {
+    padding: 32px 21px 29px;
+    text-align: center;
+  }
+
+  .form__personal-wrapper {
+    gap: 101px;
+  }
+
+  .form__assess-title {
+    padding-top: 37px;
+  }
+
+  .form__assess {
+    .form__check-list {
+      justify-content: space-between;
+      padding: 14px 54px;
+      margin-left: 0;
+    }
+
+    .form__check-item {
+      width: auto;
+
+      &:nth-child(2n) {
+        width: auto;
+      }
+    }
+  }
+
+  .form__choice-title {
+    padding-top: 39px;
+    padding-bottom: 35px;
+    margin-bottom: 34px;
+  }
+
+  .form__choice {
+    .form__check-list {
+      justify-content: space-between;
+      padding: 0 45px;
+      margin-left: 0;
+      margin-bottom: 44px;
+    }
+
+    .form__check-item {
+      width: auto;
+
+      &:nth-child(2n) {
+        width: auto;
+      }
+    }
+  }
+
+  .form__textarea-title {
+    padding: 16px 75px 12px;
   }
 
   .form__textarea {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 95px;
+    padding-right: 95px;
+  }
+
+  .form__textarea-reviews {
+    padding: 17px;
   }
 
   .form__button-wrapper {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 95px;
+    padding-right: 95px;
   }
 
   .form__reviews-button {
     width: 384px;
+  }
+
+  .main-footer__wrapper-form {
+    padding: 41px 16px;
   }
 }
