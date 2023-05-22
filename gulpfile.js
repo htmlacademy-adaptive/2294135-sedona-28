@@ -4,6 +4,15 @@ import less from 'gulp-less';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
+import rename from 'gulp-rename';
+// import csso from 'postcss-csso';
+import htmlmin from 'gulp-htmlmin';
+import terser from 'gulp-terser';
+import squoosh from 'gulp-squoosh';
+import svgo from 'gulp-svgo';
+import svgstore from 'gulp-svgstore';
+// import del from 'gulp-del';
+
 
 // Styles
 
@@ -14,16 +23,80 @@ export const styles = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest('source/css', { sourcemaps: '.' }))
+    .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
 }
+
+// html
+export const html = () => {
+  return gulp.src('source/*.html')
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(gulp.dest('build'));
+}
+
+// script
+export const script = () => {
+  return gulp.src('source/js/*.js')
+  .pipe(terser())
+  .pipe(gulp.dest('build/js'));
+}
+
+// img
+
+export const images = () => {
+  return gulp.src('source/img/*.jpg')
+  .pipe(squoosh())
+  .pipe(gulp.dest('build/img'));
+}
+
+// webp
+
+export const createWebp = () => {
+  return gulp.src('source/img/*.jpg')
+  .pipe(squoosh( {
+    webp: {}
+  }))
+  .pipe(gulp.dest('build/img'));
+}
+
+// svg sprite
+
+export const sprite = () => {
+  return gulp.src('source/img/*.svg')
+  .pipe(svgo())
+  .pipe(svgstore({
+    inlineSvg: true
+  }))
+  .pipe(rename('sprite.svg'))
+  .pipe(gulp.dest('build/img'));
+}
+
+// fonts, favicons
+
+export const copy = (done) => {
+  gulp.src([
+    'source/fonts/*.{woff2,woff}',
+    'source/*.ico',
+    'source/.webmanifest',
+  ], {
+    base: 'source'
+  })
+  .pipe(gulp.dest('build'))
+  done();
+}
+
+// clean
+
+// export const clean = () => {
+//   return del('build')
+// };
 
 // Server
 
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: 'source'
+      baseDir: 'build'
     },
     cors: true,
     notify: false,
@@ -41,5 +114,6 @@ const watcher = () => {
 
 
 export default gulp.series(
-  styles, server, watcher
+  html, styles, server, watcher
 );
+
