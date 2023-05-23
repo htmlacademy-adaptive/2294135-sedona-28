@@ -5,13 +5,13 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
 import rename from 'gulp-rename';
-// import csso from 'postcss-csso';
 import htmlmin from 'gulp-htmlmin';
 import terser from 'gulp-terser';
-import squoosh from 'gulp-squoosh';
+import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgo';
-import svgstore from 'gulp-svgstore';
-// import del from 'gulp-del';
+import { stacksvg } from "gulp-stacksvg"
+import del from 'del';
+// import reload from
 
 
 // Styles
@@ -23,6 +23,7 @@ export const styles = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
+    .pipe(rename('style.min.css'))
     .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
 }
@@ -51,7 +52,7 @@ export const images = () => {
 
 // webp
 
-export const createWebp = () => {
+const createWebp = () => {
   return gulp.src('source/img/*.jpg')
   .pipe(squoosh( {
     webp: {}
@@ -64,10 +65,10 @@ export const createWebp = () => {
 export const sprite = () => {
   return gulp.src('source/img/*.svg')
   .pipe(svgo())
-  .pipe(svgstore({
+  .pipe(stacksvg({
     inlineSvg: true
   }))
-  .pipe(rename('sprite.svg'))
+  .pipe(rename('stack.svg'))
   .pipe(gulp.dest('build/img'));
 }
 
@@ -77,7 +78,7 @@ export const copy = (done) => {
   gulp.src([
     'source/fonts/*.{woff2,woff}',
     'source/*.ico',
-    'source/.webmanifest',
+    'source/manifest.webmanifest',
   ], {
     base: 'source'
   })
@@ -87,9 +88,9 @@ export const copy = (done) => {
 
 // clean
 
-// export const clean = () => {
-//   return del('build')
-// };
+export const clean = () => {
+  return del('build');
+};
 
 // Server
 
@@ -105,6 +106,13 @@ const server = (done) => {
   done();
 }
 
+// Reload
+
+// const reload = (done) => {
+//   browser.reload();
+//   done();
+// }
+
 // Watcher
 
 const watcher = () => {
@@ -114,5 +122,14 @@ const watcher = () => {
 
 
 export default gulp.series(
-  html, styles, server, watcher
+  clean,
+  html,
+  styles,
+  script,
+  images,
+  createWebp,
+  sprite,
+  copy,
+  server,
+  watcher
 );
