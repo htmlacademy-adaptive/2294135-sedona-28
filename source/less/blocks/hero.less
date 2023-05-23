@@ -1,31 +1,31 @@
-.hero {
-  padding-top: 90px;
-  padding-bottom: 85px;
-  background-color: @theme-color;
-  background-image: url("../img/stack.svg#intro-triangle"), url("../img/mobile-back.jpg");
-  background-size: auto, cover;
-  background-repeat: no-repeat;
-  background-position: bottom, center bottom;
+// .hero {
+//   padding-top: 90px;
+//   padding-bottom: 85px;
+//   background-color: @theme-color;
+//   background-image: url("../img/stack.svg#intro-triangle"), url("../img/mobile-back.jpg");
+//   background-size: auto, cover;
+//   background-repeat: no-repeat;
+//   background-position: bottom, center bottom;
 
-  @media (min-resolution: 2dppx) {
-    background-image: url("../img/stack.svg#intro-triangle"), url("../img/mobile-back@2x.jpg");
-    background-size: auto, 901px auto;
-  }
+//   @media (min-resolution: 2dppx) {
+//     background-image: url("../img/stack.svg#intro-triangle"), url("../img/mobile-back@2x.jpg");
+//     background-size: auto, 901px auto;
+//   }
 
-  @media (min-width: 768px) {
-    padding-top: 77px;
-    padding-bottom: 91px;
-    background-image: url("../img/stack.svg#intro-triangle"), url("../img/desktop-back.jpg");
-    background-size: auto, cover;
-    background-repeat: no-repeat;
-    background-position: bottom, center bottom;
+//   @media (min-width: 768px) {
+//     padding-top: 77px;
+//     padding-bottom: 91px;
+//     background-image: url("../img/stack.svg#intro-triangle"), url("../img/desktop-back.jpg");
+//     background-size: auto, cover;
+//     background-repeat: no-repeat;
+//     background-position: bottom, center bottom;
 
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/stack.svg#intro-triangle"), url("../img/desktop-back@2x.jpg");
-      background-size: auto, 1200px auto;
-    }
-  }
-}
+//     @media (min-resolution: 2dppx) {
+//       background-image: url("../img/stack.svg#intro-triangle"), url("../img/desktop-back@2x.jpg");
+//       background-size: auto, 1200px auto;
+//     }
+//   }
+// }
 
 .hero__img {
   display: block;
@@ -34,5 +34,22 @@
   @media (min-width: 768px) {
     width: 460px;
     height: 350px;
+  }
+}
+
+.hero {
+  background-color: @theme-color;
+  position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 57px;
+      position: absolute;
+      bottom: 0;
+      background-image: url("../img/stack.svg#intro-triangle");
+      background-size: auto 57px;
+      background-repeat: no-repeat;
+      background-position: bottom;
   }
 }
