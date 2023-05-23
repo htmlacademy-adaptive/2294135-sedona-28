@@ -6,6 +6,15 @@
 
 .card-item__img-link {
   cursor: pointer;
+
+  &:focus {
+    opacity: 0.8;
+    outline: none;
+  }
+
+  &:hover .card-item__img {
+    opacity: 0.8;
+  }
 }
 
 .card-item__img {
@@ -62,6 +71,21 @@
 
     @media (min-width: @desktop-width) {
       background-color: #ffffff;
+    }
+  }
+
+  &:hover::after {
+    width: 28px;
+    height: 26px;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::after {
+      width: 28px;
+      height: 26px;
+      outline: none;
     }
   }
 }

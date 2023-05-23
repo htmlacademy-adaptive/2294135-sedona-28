@@ -11,7 +11,6 @@ import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgo';
 import { stacksvg } from "gulp-stacksvg"
 import del from 'del';
-// import reload from
 
 
 // Styles
@@ -108,16 +107,16 @@ const server = (done) => {
 
 // Reload
 
-// const reload = (done) => {
-//   browser.reload();
-//   done();
-// }
+const reload = (done) => {
+  browser.reload();
+  done();
+}
 
 // Watcher
 
 const watcher = () => {
   gulp.watch('source/less/**/*.less', gulp.series(styles));
-  gulp.watch('source/*.html').on('change', browser.reload);
+  gulp.watch('source/*.html', gulp.series(html, reload));
 }
 
 

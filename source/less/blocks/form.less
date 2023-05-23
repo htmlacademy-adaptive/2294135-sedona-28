@@ -24,6 +24,8 @@
 
 .form__introduce-title {
   padding: 25px 19px 20px 18px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form__introduce-label {
@@ -33,6 +35,8 @@
 
 .form__contacts-title {
   padding: 26px 19px 19px 18px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form__contacts-label {
@@ -91,6 +95,13 @@
     background-color: #ffffff;
     border: 4px solid #e5e5e5;
   }
+
+  &:disabled,
+  &:disabled:hover {
+    color: #e6e6e6;
+    background-color: #ffffff;
+    border: 4px solid #e6e6e6;
+  }
 }
 
 .form__introduce-input::placeholder,
@@ -118,6 +129,9 @@
 
 .form__assess-title {
   padding: 26px 5px 29px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form__check-list {
@@ -136,10 +150,13 @@
 
 .form__choice-title {
   padding: 26px 5px 29px 3px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form__assess-label,
 .form__choice-label {
+  .label-title ();
   text-transform: none;
   text-align: left;
   padding-left: 62px;
@@ -147,6 +164,8 @@
 
 .form__textarea-title {
   padding: 25px 5px 19px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form__textarea-reviews {
@@ -154,6 +173,26 @@
   resize: none;
   height: 151px;
   padding: 16px;
+
+  &::placeholder {
+    color: fade(#000000, 30%);
+  }
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+
+  &:active,
+  &:focus {
+    background-color: #ffffff;
+    outline: 4px solid #e5e5e5;
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    outline: none;
+    background-color: #f2f2f2;
+  }
 }
 
 .form__textarea {
@@ -323,7 +362,7 @@
   }
 
   .main-footer__wrapper-form {
-    padding: 31px 16px;
+    padding: 31px 16px 37px;
   }
 }
 
@@ -380,9 +419,10 @@
   }
 
   .form__choice-title {
-    padding-top: 39px;
-    padding-bottom: 35px;
-    margin-bottom: 34px;
+    padding-top: 37px;
+    padding-bottom: 38px;
+    margin-bottom: 33px;
+    padding-left: 63px;
   }
 
   // .form__choice {
