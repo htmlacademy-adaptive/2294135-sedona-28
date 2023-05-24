@@ -1,12 +1,11 @@
 .check {
-  display: block;
+  display: flex;
   position: relative;
 }
 
-// focus
-// .check__input-radio:focus + .check__radio {
-//   outline: 2px solid #83b3d3;
-// }
+.check__input-radio:focus + .check__radio {
+  outline: 2px solid #83b3d3;
+}
 
 .check__radio {
   display: block;
@@ -48,6 +47,10 @@
 .check__input-radio[type="radio"]:disabled + .check__radio,
 .check__input-radio[type="radio"]:disabled + .check__radio:hover {
   background-color: #e6e6e6;
+}
+
+.check__input-mark:focus + .check__mark {
+  outline: 2px solid #83b3d3;
 }
 
 .check__mark {
