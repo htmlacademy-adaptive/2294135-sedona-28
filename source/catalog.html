@@ -7,7 +7,7 @@
   <title>HTML Academy: Седона</title>
   <link rel="preload" href="/css/style.min.css" as="style">
   <link rel="preload" href="/js/script.js" as="script">
-  <link rel="preload" href="/fonts/ptsans.woff2" as="font"crossorigin="anonymous">
+  <link rel="preload" href="/fonts/ptsans.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.min.css">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
@@ -21,7 +21,7 @@
     <!-- header -->
 
     <header class="main-header">
-      <a class="main-header__logo" href="index.html">
+      <a class="main-header__logo main-header__logo--nojs" href="index.html">
         <svg class="main-logo" width="185" height="96" role="img"
           aria-label="Переход на главную страницу сайта о Седоне">
           <use xlink:href="img/stack.svg#logo"></use>
@@ -78,12 +78,12 @@
               <a class="card-item__img-link" href="#">
                 <picture>
                   <source media="(min-width: 1200px)" width="1200" height="400"
-                    srcset="img/catalog-photo-1-desktop.jpg, img/catalog-photo-1-desktop@2x.jpg">
+                    srcset="img/catalog-photo-1-desktop.jpg 1x, img/catalog-photo-1-desktop@2x.jpg 2x">
                   <source media="(min-width: 768px)" width="648" height="400"
-                    srcset="img/catalog-photo-1-tablet.jpg, img/catalog-photo-1-tablet@2x.jpg">
+                    srcset="img/catalog-photo-1-tablet.jpg 1x, img/catalog-photo-1-tablet@2x.jpg 2x">
                   <img class="card-item__img"
                     src="img/catalog-photo-1-mobile.jpg" width="280"
-                    height="280" srcset="img/catalog-photo-1-mobile@2x.jpg"
+                    height="280" srcset="img/catalog-photo-1-mobile@2x.jpg 2x"
                     alt="Фото заката в Седоне.">
                 </picture>
               </a>
@@ -108,11 +108,11 @@
               <a class="card-item__img-link" href="#">
                 <picture>
                   <source media="(min-width: 768px)" width="324" height="267"
-                    srcset="img/photo-2-plants-desktop.jpg, img/photo-2-plants-desktop@2x.jpg">
+                    srcset="img/photo-2-plants-desktop.jpg 1x, img/photo-2-plants-desktop@2x.jpg 2x">
                   <img class="card-item__img"
                     src="img/photo-2-plants-mobile.jpg" width="280" height="280"
                     alt="Фото растения в Седоне."
-                    srcset="img/photo-2-plants-mobile@2x.jpg">
+                    srcset="img/photo-2-plants-mobile@2x.jpg 2x">
                 </picture>
               </a>
               <figcaption class="card-item__figcaption">
@@ -137,10 +137,10 @@
               <a class="card-item__img-link" href="#">
                 <picture>
                   <source media="(min-width: 768px)" width="324" height="267"
-                    srcset="img/catalog-photo-3-desktop.jpg, img/catalog-photo-3-desktop@2x.jpg">
+                    srcset="img/catalog-photo-3-desktop.jpg 1x, img/catalog-photo-3-desktop@2x.jpg 2x">
                   <img class="card-item__img"
                     src="img/catalog-photo-3-mobile.jpg" width="280"
-                    height="280" srcset="img/catalog-photo-3-mobile@2x.jpg"
+                    height="280" srcset="img/catalog-photo-3-mobile@2x.jpg 2x"
                     alt="Фото дороги с высоты в Седоне.">
                 </picture>
               </a>
@@ -164,10 +164,10 @@
               <a class="card-item__img-link" href="#">
                 <picture>
                   <source media="(min-width: 768px)" width="324" height="267"
-                    srcset="img/catalog-photo-4-desktop.jpg, img/catalog-photo-4-desktop@2x.jpg">
+                    srcset="img/catalog-photo-4-desktop.jpg 1x, img/catalog-photo-4-desktop@2x.jpg 2x">
                   <img class="card-item__img"
                     src="img/catalog-photo-4-mobile.jpg" width="280"
-                    height="280" srcset="img/catalog-photo-4-mobile@2x.jpg"
+                    height="280" srcset="img/catalog-photo-4-mobile@2x.jpg 2x"
                     alt="Фото моста Дьявола в Седоне.">
                 </picture>
               </a>
@@ -201,9 +201,9 @@
           <span class="visually-hidden">Посмотреть видео о Седоне.</span>
           <picture>
             <source media="(min-width: 768px)"
-              srcset="img/video-desktop.jpg, img/video-desktop@2x.jpg"><img
+              srcset="img/video-desktop.jpg 1x, img/video-desktop@2x.jpg 2x"><img
               class="catalog-video__img" src="img/video-mobile.jpg" width="280"
-              height="177" srcset="img/video-mobile@2x.jpg"
+              height="177" srcset="img/video-mobile@2x.jpg 2x"
               alt="Видео о Седоне.">
           </picture>
         </a>

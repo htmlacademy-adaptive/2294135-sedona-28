@@ -63,9 +63,14 @@
     opacity: 0.7;
   }
 
+  &:hover .catalog-video__img {
+    opacity: 0.8;
+  }
+
   &:hover::after {
     width: 58px;
     height: 64px;
+    opacity: 1;
   }
 
   &:focus {
@@ -74,7 +79,12 @@
     &::after {
       width: 58px;
       height: 64px;
+      opacity: 1;
     }
+  }
+
+  &:focus .catalog-video__img {
+    opacity: 0.8;
   }
 
   &:active::after {

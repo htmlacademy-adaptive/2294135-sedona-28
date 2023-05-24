@@ -1,5 +1,4 @@
 .modal {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -55,14 +54,14 @@
 
 // open modal success
 
-// .modal-ok--active {
-//   display: block;
-// }
+.modal-ok--active {
+  display: none;
+}
 
 // open modal error
-// .modal-error--active {
-//   display: block;
-// }
+.modal-error--active {
+  display: none;
+}
 
 @media (min-width: @tablet-width) {
   .divider-modal {
@@ -123,3 +122,10 @@
     font-size: 21px;
   }
 }
+
+@media (min-width: @desktop-width) {
+  .divider-modal {
+    display: block;
+  }
+}
+
