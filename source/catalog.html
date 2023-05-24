@@ -3,9 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>HTML Academy: Седона</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preload" href="/css/style.min.css" as="style">
+  <link rel="preload" href="/js/script.js" as="script">
+  <link rel="preload" href="/fonts/ptsans.woff2" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.min.css">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/favicons/apple.png">
@@ -14,12 +17,14 @@
 
 <body class="page-body">
   <div class="page-body__wrapper">
+
     <!-- header -->
+
     <header class="main-header">
       <a class="main-header__logo" href="index.html">
         <svg class="main-logo" width="185" height="96" role="img"
           aria-label="Переход на главную страницу сайта о Седоне">
-          <use xlink:href="img/sprite.svg#logo"></use>
+          <use xlink:href="img/stack.svg#logo"></use>
         </svg>
       </a>
       <nav class="navigation navigation--closed navigation--nojs">
@@ -46,37 +51,39 @@
         </ul>
       </nav>
     </header>
+
     <!-- main -->
+
     <main class="main-container">
       <h1 class="visually-hidden">Сайт города Седона.</h1>
+
       <!-- hero -->
-      <section class="hero hero-inner ">
+
+      <section class="hero hero-inner">
         <svg class="hero__img hero-inner__img" width="229" height="39"
           role="img" aria-label="Welcome to Sedona" focusable="false">
-          <use xlink:href="img/sprite.svg#hero__sedona"></use>
+          <use xlink:href="img/stack.svg#text-sedona"></use>
         </svg>
       </section>
       <section class="catalog">
         <div class="catalog__title-wrapper">
           <h2 class="catalog__title title">Фото и видео</h2>
           <p class="catalog__description description">Не можете решиться на
-            путешествие из-за курса? Фотографии помогут
-            вам забыть о политике и экономике.</p>
+            путешествие из-за курса? Фотографии помогут вам забыть о политике и
+            экономике.</p>
         </div>
         <ul class="catalog__card">
           <li class="catalog__card-item card-item">
             <figure class="card-item__figure">
               <a class="card-item__img-link" href="#">
                 <picture>
-                  <source media="(min-width: 1200px)" width="1200"
-                  height="400"
-                    srcset="img/catalog-photo-1-desktop.jpg, img/catalog-photo-1-desktop@2x.jpg">
-                  <source media="(min-width: 768px)" width="648"
-                  height="400"
-                    srcset="img/catalog-photo-1-tablet.jpg, img/catalog-photo-1-tablet@2x.jpg">
+                  <source media="(min-width: 1200px)" width="1200" height="400"
+                    srcset="img/catalog-photo-1-desktop.jpg 1x, img/catalog-photo-1-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" width="648" height="400"
+                    srcset="img/catalog-photo-1-tablet.jpg 1x, img/catalog-photo-1-tablet@2x.jpg 2x">
                   <img class="card-item__img"
                     src="img/catalog-photo-1-mobile.jpg" width="280"
-                    height="280" srcet="img/catalog-photo-1-mobile@2x.jpg"
+                    height="280" srcset="img/catalog-photo-1-mobile@2x.jpg 2x"
                     alt="Фото заката в Седоне.">
                 </picture>
               </a>
@@ -88,7 +95,8 @@
                 </div>
                 <div class="card-item__wrapper-like">
                   <button class="card-item__figcaption-like" type="button">
-                    <span class="visually-hidden">Кнопка "Мне нравится".</span>
+                    <span class="visually-hidden">Кнопка "Мне
+                      нравится".</span>
                   </button>
                   <span class="card-item__number-of-likes">1350</span>
                 </div>
@@ -99,13 +107,12 @@
             <figure class="card-item__figure">
               <a class="card-item__img-link" href="#">
                 <picture>
-                  <source media="(min-width: 768px)" width="324"
-                  height="267"
-                    srcset="img/photo-2-plants-desktop.jpg, img/photo-2-plants-desktop@2x.jpg">
+                  <source media="(min-width: 768px)" width="324" height="267"
+                    srcset="img/photo-2-plants-desktop.jpg 1x, img/photo-2-plants-desktop@2x.jpg 2x">
                   <img class="card-item__img"
                     src="img/photo-2-plants-mobile.jpg" width="280" height="280"
                     alt="Фото растения в Седоне."
-                    srcset="img/photo-2-plants-mobile@2x.jpg">
+                    srcset="img/photo-2-plants-mobile@2x.jpg 2x">
                 </picture>
               </a>
               <figcaption class="card-item__figcaption">
@@ -129,12 +136,11 @@
             <figure class="card-item__figure">
               <a class="card-item__img-link" href="#">
                 <picture>
-                  <source media="(min-width: 768px)" width="324"
-                  height="267"
-                    srcset="img/catalog-photo-3-desktop.jpg, img/catalog-photo-3-desktop@2x.jpg">
+                  <source media="(min-width: 768px)" width="324" height="267"
+                    srcset="img/catalog-photo-3-desktop.jpg 1x, img/catalog-photo-3-desktop@2x.jpg 2x">
                   <img class="card-item__img"
                     src="img/catalog-photo-3-mobile.jpg" width="280"
-                    height="280" srcset="img/catalog-photo-3-mobile@2x.jpg"
+                    height="280" srcset="img/catalog-photo-3-mobile@2x.jpg 2x"
                     alt="Фото дороги с высоты в Седоне.">
                 </picture>
               </a>
@@ -157,12 +163,11 @@
             <figure class="card-item__figure">
               <a class="card-item__img-link" href="#">
                 <picture>
-                  <source media="(min-width: 768px)" width="324"
-                  height="267"
-                    srcset="img/catalog-photo-4-desktop.jpg, img/catalog-photo-4-desktop@2x.jpg">
+                  <source media="(min-width: 768px)" width="324" height="267"
+                    srcset="img/catalog-photo-4-desktop.jpg 1x, img/catalog-photo-4-desktop@2x.jpg 2x">
                   <img class="card-item__img"
                     src="img/catalog-photo-4-mobile.jpg" width="280"
-                    height="280" srcset="img/catalog-photo-4-mobile@2x.jpg"
+                    height="280" srcset="img/catalog-photo-4-mobile@2x.jpg 2x"
                     alt="Фото моста Дьявола в Седоне.">
                 </picture>
               </a>
@@ -170,12 +175,12 @@
                 <div class="card-item__figcaption-wrapper">
                   <h3 class="card-item__figcaption-title">Мост дьявола</h3>
                   <span class="card-item__figcaption-author description">Автор
-                    фото:
-                    Антон</span>
+                    фото: Антон</span>
                 </div>
                 <div class="card-item__wrapper-like">
                   <button class="card-item__figcaption-like" type="button">
-                    <span class="visually-hidden">Кнопка "Мне нравится".</span>
+                    <span class="visually-hidden">Кнопка "Мне
+                      нравится".</span>
                   </button>
                   <span class="card-item__number-of-likes">254</span>
                 </div>
@@ -184,21 +189,21 @@
           </li>
         </ul>
       </section>
-      <section class="catalog__video catalog-video">
+      <section class="catalog-video">
         <h2 class="visually-hidden">Видео о Седоне.</h2>
         <div class="catalog-video__wrapper">
           <h3 class="catalog-video__title title">Все еще сомневаетесь?</h3>
-          <p class="catalog-video__description description">Смотрите видеопрезентацию
-            и скорее за билетами, пока они не
-            подорожали в очередной раз!</p>
+          <p class="catalog-video__description description">Смотрите
+            видеопрезентацию и скорее за билетами, пока они не подорожали в
+            очередной раз!</p>
         </div>
         <a class="catalog-video__link" href="#">
           <span class="visually-hidden">Посмотреть видео о Седоне.</span>
           <picture>
             <source media="(min-width: 768px)"
-              srcset="img/video-desktop.jpg, img/video-desktop@2x.jpg">
-            <img class="catalog-video__img" src="img/video-mobile.jpg"
-              width="280" height="177" srcset="img/video-mobile@2x.jpg"
+              srcset="img/video-desktop.jpg 1x, img/video-desktop@2x.jpg 2x"><img
+              class="catalog-video__img" src="img/video-mobile.jpg" width="280"
+              height="177" srcset="img/video-mobile@2x.jpg 2x"
               alt="Видео о Седоне.">
           </picture>
         </a>
@@ -206,6 +211,7 @@
     </main>
 
     <!-- footer -->
+
     <footer class="main-footer">
       <div class="main-footer__wrapper main-footer__wrapper-catalog">
         <a class="main-footer__hashtag hashtag-link title"
@@ -234,7 +240,7 @@
           href="https://htmlacademy.ru/intensive/adaptive">Разработано
           <svg class="main-footer__copyright-logo" width="27" height="35"
             aria-label="Переход на cайт HTML Academy">
-            <use xlink:href="img/sprite.svg#htmlacademy-logo"></use>
+            <use xlink:href="img/stack.svg#htmlacademy"></use>
           </svg>
         </a>
       </div>

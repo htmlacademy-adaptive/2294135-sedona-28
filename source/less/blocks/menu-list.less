@@ -7,8 +7,10 @@
     background-color: @theme-color;
 
     &:hover,
+    &:focus,
     &:active {
       background-color: #669ec0;
+      outline: none;
     }
 
     & .menu-list__link:active {
@@ -73,8 +75,10 @@
       color: @current-link-color;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: @theme-color;
+      outline: none;
     }
 
     &:active {

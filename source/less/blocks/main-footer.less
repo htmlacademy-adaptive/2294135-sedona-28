@@ -1,5 +1,5 @@
 .main-footer__wrapper {
-  padding: 30px 20px;
+  padding: 10px 20px 29px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -16,18 +16,6 @@
   @media (min-width: @desktop-width) {
     padding: 36px 16px;
     gap: 67px;
-  }
-}
-
-.main-footer__wrapper-catalog {
-  padding-top: 19px;
-
-  @media (min-width: @tablet-width) {
-    padding-top: 72px;
-  }
-
-  @media (min-width: @desktop-width) {
-    padding-top: 117px;
   }
 }
 
@@ -65,8 +53,10 @@
     padding-left: 9px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: @theme-color;
+    outline: none;
   }
 
   &:active {

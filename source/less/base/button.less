@@ -2,16 +2,19 @@
   .link-decoration-none();
   .button-style();
 
+  &:focus,
   &:hover,
   &:active {
     background-color: #669ec0;
+    outline: none;
   }
 
   &:active {
     color: fade(#ffffff, 30%);
   }
+
+  &:disabled {
+    background-color: #e5e5e5;
+    color: #ffffff;
+  }
 }
-// &&&&&
-// .button--disabled {
-//   background-color: #e5e5e5;
-// }

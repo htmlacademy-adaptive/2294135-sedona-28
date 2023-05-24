@@ -1,6 +1,10 @@
 .check {
-  display: block;
+  display: flex;
   position: relative;
+}
+
+.check__input-radio:focus + .check__radio {
+  outline: 2px solid #83b3d3;
 }
 
 .check__radio {
@@ -40,6 +44,15 @@
   opacity: 0.3;
 }
 
+.check__input-radio[type="radio"]:disabled + .check__radio,
+.check__input-radio[type="radio"]:disabled + .check__radio:hover {
+  background-color: #e6e6e6;
+}
+
+.check__input-mark:focus + .check__mark {
+  outline: 2px solid #83b3d3;
+}
+
 .check__mark {
   display: block;
   width: 46px;
@@ -62,7 +75,7 @@
 .check__input-mark[type="checkbox"]:checked + .check__mark::before {
   content: "";
   position: absolute;
-  mask-image: url("../img/sprite.svg#tick");
+  mask-image: url("../img/stack.svg#tick");
   background-color: #333333;
   top: 0;
   left: 0;
@@ -75,4 +88,9 @@
 
 .check__input-mark[type="checkbox"]:checked + .check__mark:active::before {
   opacity: 0.3;
+}
+
+.check__input-mark[type="checkbox"]:disabled + .check__radio,
+.check__input-mark[type="checkbox"]:disabled + .check__radio:hover {
+  background-color: #e6e6e6;
 }
