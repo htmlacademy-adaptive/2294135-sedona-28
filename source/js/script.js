@@ -14,4 +14,3 @@ navigationToggle.addEventListener('click', function () {
     navigation.classList.remove('navigation--opened');
   }
 });
-
