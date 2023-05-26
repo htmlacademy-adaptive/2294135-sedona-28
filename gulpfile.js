@@ -78,6 +78,7 @@ export const copy = (done) => {
     'source/fonts/*.{woff2,woff}',
     'source/*.ico',
     'source/manifest.webmanifest',
+    'source/img/favicons/*',
   ], {
     base: 'source'
   })
@@ -119,16 +120,37 @@ const watcher = () => {
   gulp.watch('source/*.html', gulp.series(html, reload));
 }
 
+//  build
 
-export default gulp.series(
+export const build = gulp.series(
   clean,
+  copy,
+  images,
+  gulp.parallel(
   html,
   styles,
   script,
-  images,
   createWebp,
   sprite,
-  copy,
+  ),
+  gulp.series(
   server,
   watcher
-);
+));
+
+
+export default gulp.series(
+  clean,
+  copy,
+  images,
+  gulp.parallel(
+  html,
+  styles,
+  script,
+  createWebp,
+  sprite,
+  ),
+  gulp.series(
+  server,
+  watcher
+));
