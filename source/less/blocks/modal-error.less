@@ -1,0 +1,44 @@
+.modal-error__wrapper {
+  padding: 45px 40px 35px;
+  background-color: #ffffff;
+
+  .modal__description {
+    margin-bottom: 27px;
+  }
+}
+
+.modal-error__button {
+  padding: 18px 20px 14px;
+  width: 180px;
+  font-size: 18px;
+}
+
+// open modal error
+.modal-error--active {
+  display: none;
+}
+
+@media (min-width: @tablet-width) {
+  .modal-error__divider {
+    display: none;
+  }
+
+  .modal-error__wrapper {
+    width: 400px;
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    top: 30%;
+
+    .modal__description {
+      margin-bottom: 46px;
+    }
+
+    .modal-error__button {
+      width: 271px;
+      margin-bottom: 14px;
+      font-size: 21px;
+    }
+  }
+}

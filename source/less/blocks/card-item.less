@@ -91,6 +91,10 @@
 }
 
 @media (min-width: @tablet-width) {
+  .card-item--max-width {
+    grid-column: 1 / -1;
+  }
+
   .card-item__figure {
     padding: 0;
   }
@@ -143,7 +147,7 @@
     padding-bottom: 4px;
   }
 
-  .card-item:first-child {
+  .card-item--max-width {
     .card-item__figcaption {
       padding: 17px 20px 9px 21px;
     }
